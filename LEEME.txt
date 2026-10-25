@@ -1,0 +1,96 @@
+CIUDAD RETRO 3D - funciona sin conexión
+=======================================
+No usa CDNs, fuentes externas ni bibliotecas: el motor WebGL está en js/engine.js.
+Todo (modelos, sonido, voces) se genera por código.
+
+Cómo ejecutarlo
+- Descomprime el ZIP y abre index.html con Chrome, Edge o Firefox (doble clic).
+- Si tu navegador bloquea algo con file://, abre una terminal en la carpeta y ejecuta:
+    python3 -m http.server 8000      (Windows: py -m http.server 8000)
+  luego abre http://localhost:8000 (es local, no necesita internet).
+
+Controles
+WASD / flechas mover o conducir · Ratón cámara · Clic izq. disparar/atacar
+Clic der. (mantener) apuntar con zoom · Z zoom fijo · 1 pistola, 2 puños, 3 cuchillo
+Shift correr · ESPACIO saltar (a pie) o freno de mano (en coche) · E entrar/salir
+T abrir/cerrar celular (◀ ▶ cambia de chat, 1-3 responde) · R recuperar posición · Esc pausa
+
+NOVEDADES DE ESTA VERSIÓN
+-------------------------
+Puntería y dirección más fáciles
+- Ayuda de puntería: la mira fija sola al objetivo más cercano (rombo rojo) y la bala se
+  corrige hacia él. Más amplia al apuntar con el clic derecho. Se puede desactivar en el menú.
+- Apuntar con clic derecho (zoom), sensibilidad más baja al apuntar, tiro a la cabeza (más daño).
+- El personaje se orienta hacia donde apuntas y camina de lado; cuerpo a cuerpo con auto-orientación.
+- Coche: volante suave, giro más ágil, derrape con freno de mano, cámara que anticipa las curvas
+  y ayuda de conducción que alinea el coche con la calle al soltar el volante (desactivable).
+
+Damián Quiñones, el protagonista (antes Chispa)
+- Nuevo modelo: tupé, lentes oscuros, chaqueta naranja, cadena dorada, zapatillas; camina, corre,
+  apunta con ambas manos, da puñetazos y cuchilladas.
+- Tiene personalidad: comenta lo que pasa (choques, policía, ceviche, tiros a la cabeza...).
+  Los diálogos tienen subtítulos y voz sintética distinta por personaje.
+- Peatones con aspecto variado (peinados, gorras, lentes).
+
+Modo historia (5 misiones, luego modo libre)
+1. Primer día: llega al Club Neón.   2. Auto de lujo: roba el superdeportivo y piérdelo de la policía.
+3. Cobranza: noquea a 3 morosos.     4. Ceviche express: entrega el pedido a tiempo sin golpearlo.
+5. Se armó la grande: escapa de la policía (3 estrellas).
+- Dinero, baliza amarilla en el mundo, marcador en el minimapa y distancia al objetivo.
+- Si caes o te arrestan, reintentas la misión.
+- Nuevos lugares: Casa de Doña Chela, Pintura Express (repinta tu coche y pierde a la policía
+  si no hay agentes cerca; cuesta dinero) y la Cevichería (cura tu vida a pie).
+
+Policía: más estrellas = más dificultad de verdad
+- Estrellas 1-5 aumentan el número de patrullas (2, 3, 5, 7, 9), su velocidad y la frecuencia de refuerzos.
+- 3★ interceptores rápidos · 4★ camiones SWAT blindados y retenes en tu camino · 5★ casi todo SWAT.
+- Los agentes bajan del coche: desde 2★ disparan; a 1★ intentan arrestarte (si te rodean a pie, pierdes).
+- Navegan por las calles, te predicen al perseguirte y pueden pararte con retenes.
+- Para bajar de nivel debes romper su línea de visión y esconderte: cuanto más alto el nivel, más
+  tiempo oculto necesitas. Si te ven continuamente, el nivel sube solo.
+- Cada delito suma "calor": matar peatones, disparar a policías o destruir patrullas sube el nivel.
+
+Minimapa (estilo GTA V)
+- Abajo a la izquierda, rota con la cámara, con norte (N), barra de vida y de coche.
+- Muestra locales, objetivos (flecha amarilla en el borde si están lejos), patrullas parpadeando
+  rojo/azul, agentes y la zona de búsqueda en rojo cuando te pierden. El borde parpadea con estrellas.
+
+Estructura de código (js/)
+engine.js motor WebGL · core.js mundo, coches y sonido · char.js personajes y coches (dibujo)
+combat.js puntería y disparo · police.js sistema policial · story.js diálogos y misiones
+hud.js minimapa e interfaz · main.js controles y bucle principal
+
+=====================================================================
+VERSIÓN 3 - CAPÍTULO 2: LA GUERRA DE LOS TIBURONES
+=====================================================================
+Historia
+- Eres Damián Quiñones, peruano, miembro de la banda criminal Los Pulpos (jefe: Don Lucho).
+  Aliados: Mónica (Club Neón), Tuerca (Pintura Express), Lalo, Doña Chela. Enemigos: Los Tiburones
+  (jefe: El Tiburón) y el capitán Salazar, policía corrupto.
+- 15 misiones: Cap. 1 (1-5) el regreso · Cap. 2 (6-15) la guerra:
+  6 Mensajes sin leer · 7 Sin llamar la atención · 8 Fuego cruzado · 9 Persecución en la avenida
+  10 Rescata a Lalo · 11 Dinero sucio · 12 Traición · 13 Asalto al puerto
+  14 Cabeza de tiburón (jefe final) · 15 Rey de la ciudad
+- En el menú puedes elegir en qué misión empezar; el juego recuerda la última que completaste.
+
+Celular (tecla T)
+- Mensajes de los personajes llegan durante la historia, con aviso y sonido. Algunos te dejan
+  elegir qué responder (teclas 1-3); ellos contestan según lo que digas. ◀ ▶ cambia de chat.
+
+Mapa ampliado
+- Ciudad de 8x8 manzanas (antes 5x5): zona industrial nueva y 4 lugares: Mansión de Don Lucho,
+  Discoteca Marea, Almacén del Puerto (contenedores y grúa) y el Mirador. Más tráfico y peatones.
+
+Saltar
+- Espacio (a pie): salto de ~1.6 m; puedes subirte a muros bajos, mesas y techos de coches deportivos.
+
+Nuevo aspecto
+- Damián: conjunto Nike negro (chaqueta y pants con franja blanca, logo en el pecho), zapatillas
+  negras de suela blanca y pelo taper fade.
+
+Nuevo contenido de juego
+- Enemigos armados (Tiburones, escoltas corruptos, jefe final) que te disparan, aparecen en oleadas
+  y funcionan con la ayuda de puntería y el cuerpo a cuerpo.
+- Coches objetivo que huyen, bolsos de dinero con cronómetro, retenes y huidas con la policía.
+
+Código nuevo: js/gang.js (enemigos) · js/phone.js (celular). story.js ahora tiene las 15 misiones.
