@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8"><title>Ciudad Retro 3D</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="es"><head><meta charset="utf-8"><title>TrujiYork</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="catchme404">
 <link rel="stylesheet" href="style.css"></head><body>
 <canvas id="c"></canvas>
 <div id="hud" hidden>
  <div id="hurt"></div>
- <div id="top"><div id="cash"></div><div id="stars"></div><div id="wep"></div></div>
+ <div id="top"><div id="clock"></div><div id="cash"></div><div id="stars"></div><div id="wep"></div></div>
  <div id="mmw"><canvas id="mm"></canvas>
   <div id="bars"><div id="hpt" class="bar"><i id="hpb"></i></div><div id="vhb" class="bar vb"><i></i></div></div></div>
- <div id="obj"></div><div id="mtimer"></div>
+ <div id="zone"></div><div id="obj"></div><div id="mtimer"></div><div id="way"></div>
  <div id="spd"></div>
  <div id="cross"></div><div id="lock" hidden></div>
- <div id="msg"></div><div id="sub"></div><div id="ban" hidden></div>
+ <div id="msg"></div><div id="bribe" hidden></div><div id="sub"></div><div id="ban" hidden></div>
  <div id="toast" hidden></div><div id="pbadge" hidden></div>
- <div id="phone" hidden><div class="ph-h"><span id="phn"></span><small>◀ ▶ chats · T cerrar</small></div><div id="phm"></div><div id="pho"></div></div>
+ <div id="wsigns"></div>
+ <div id="flirt" hidden><div class="fh"><b id="fn"></b> <small id="fi"></small></div><div class="fb"><i id="fbar"></i></div><div id="fs"></div><div id="fo"></div><div class="fx">1-3 elegir · E cerrar</div></div>
+ <div id="phone" hidden><div class="ph-h"><span id="phn"></span><span class="phc" id="phc"></span></div><div id="phm"></div><div id="pho"></div><div class="ph-f">◀ ▶ cambia de chat · T cerrar</div></div>
 </div>
+<div id="fade"></div>
+<div id="cheat" hidden><div class="cheatp"><h2>Cheats</h2><input id="chin" type="text" placeholder="Escribe un cheat y pulsa Enter (Esc cierra)" autocomplete="off"><div id="chl"></div></div></div>
 <div id="ov"><div class="panel">
- <h1>Ciudad Retro</h1><p id="ovt">Eres <b>Damián Quiñones</b>, peruano y miembro de la banda <b>Los Pulpos</b>. Cumple los encargos de Don Lucho, enfrenta a Los Tiburones, huye de los tombos y revisa tu celular (T).</p>
+ <h1>TrujiYork</h1><p id="ovt">Eres <b>Damián Quiñones</b>, peruano y miembro de la banda <b>La Manada</b>. Cumple los encargos de Cristopher, enfrenta a Los Tiburones y al mafioso Robert Mussolini, huye de los tombos y revisa tu celular (T).</p>
  <label>Empezar en la misión <select id="mSel"></select></label>
  <button id="bPlay">Jugar</button> <button id="bRst" hidden>Reiniciar partida</button>
  <h2>Gráficos, sonido y ayudas</h2>
@@ -24,11 +28,19 @@
  <label>Volumen <input id="vol" type="range" min="0" max="1" step=".05" value=".5"></label>
  <label><input id="aAim" type="checkbox" checked> Ayuda de puntería (fija el objetivo)</label>
  <label><input id="aDrive" type="checkbox" checked> Ayuda de conducción (se alinea con la calle)</label>
+ <h2>Cámara y controles (ideal para laptop)</h2>
+ <label>Cámara <select id="camsel"><option value="0" selected>Tercera persona</option><option value="1">Primera persona</option></select> <small>(tecla V)</small></label>
+ <label>Sensibilidad del ratón/touchpad <input id="sens" type="range" min=".3" max="2.5" step=".05" value="1"> <span id="sensv">1.00</span></label>
+ <label>Campo de visión <input id="fovs" type="range" min="55" max="100" step="1" value="60"> <span id="fovv">60°</span></label>
+ <label><input id="invX" type="checkbox"> Invertir giro horizontal</label>
+ <label><input id="invY" type="checkbox"> Invertir giro vertical</label>
+ <label><input id="autoCam" type="checkbox"> Cámara automática (se centra detrás al caminar)</label>
  <h2>Controles</h2>
- <p class="help">WASD / flechas mover o conducir · Ratón cámara · Clic izq. disparar/atacar · <b>Clic der. (mantener) apuntar</b> · Z zoom fijo · 1 pistola, 2 puños, 3 cuchillo · Shift correr · <b>Espacio saltar</b> (a pie) / freno de mano (en coche) · E entrar/salir · <b>T celular</b> (◀ ▶ cambia de chat, 1-3 responde) · R recuperar posición · Esc pausa</p>
- <h2>Policía</h2>
- <p class="help">Más estrellas = más patrullas, interceptores, SWAT, agentes que disparan y retenes. Rómpeles la vista y escóndete para bajar el nivel, o repinta tu coche en Pintura Express.</p>
-</div></div>
-<script src="js/engine.js"></script><script src="js/core.js"></script><script src="js/char.js"></script><script src="js/combat.js"></script><script src="js/gang.js"></script><script src="js/phone.js"></script>
+ <p class="help">WASD mover o conducir · Ratón o <b>flechas</b> = cámara (en laptop sin ratón) · <b>V</b> primera/tercera persona · <b>Q</b> centrar cámara · <b>rueda</b> distancia de cámara · Clic izq. disparar/atacar · <b>Clic der. (mantener) apuntar</b> · Z zoom fijo · 1 pistola, 2 puños, 3 cuchillo · Shift correr · <b>Espacio saltar</b> (a pie) / freno de mano (en coche) · E entrar/salir/hablar/comprar · <b>T celular</b> (◀ ▶ chats, 1-3 responde) · <b>B sobornar policía</b> · R recuperar posición · <b>Esc mapa completo</b> · <b>| cheats</b> · <b>Y botón de pánico</b></p>
+ <p class="cred">Creador: catchme404</p>
+</div>
+<div id="mapw" hidden><canvas id="fmap" width="600" height="600"></canvas><div id="zlg"></div></div></div>
+<div id="panic" hidden><img id="pimg" src="imagen1.png" alt=""></div>
+<script src="js/engine.js"></script><script src="js/core.js"></script><script src="js/world.js"></script><script src="js/char.js"></script><script src="js/combat.js"></script><script src="js/gang.js"></script><script src="js/phone.js"></script><script src="js/flirt.js"></script><script src="js/music.js"></script>
 <script src="js/police.js"></script><script src="js/story.js"></script><script src="js/hud.js"></script><script src="js/main.js"></script>
 </body></html>

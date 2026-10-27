@@ -1,96 +1,148 @@
-CIUDAD RETRO 3D - funciona sin conexión
-=======================================
+TRUJIYORK  -  funciona sin conexión
+===================================
+Creador: catchme404
+
 No usa CDNs, fuentes externas ni bibliotecas: el motor WebGL está en js/engine.js.
 Todo (modelos, sonido, voces) se genera por código.
 
-Cómo ejecutarlo
+CÓMO EJECUTARLO
 - Descomprime el ZIP y abre index.html con Chrome, Edge o Firefox (doble clic).
 - Si tu navegador bloquea algo con file://, abre una terminal en la carpeta y ejecuta:
     python3 -m http.server 8000      (Windows: py -m http.server 8000)
-  luego abre http://localhost:8000 (es local, no necesita internet).
+  y abre http://localhost:8000 (es local, no necesita internet).
 
-Controles
-WASD / flechas mover o conducir · Ratón cámara · Clic izq. disparar/atacar
+CONTROLES
+WASD mover o conducir · Ratón o FLECHAS = cámara (laptop sin ratón) · Clic izq. disparar/atacar
 Clic der. (mantener) apuntar con zoom · Z zoom fijo · 1 pistola, 2 puños, 3 cuchillo
-Shift correr · ESPACIO saltar (a pie) o freno de mano (en coche) · E entrar/salir
-T abrir/cerrar celular (◀ ▶ cambia de chat, 1-3 responde) · R recuperar posición · Esc pausa
+Shift correr · ESPACIO saltar (a pie) / freno de mano (en coche)
+E entrar/salir del coche, hablar con clientes, comprar (ceviche, pisco sour)
+T celular (◀ ▶ cambia de chat, 1-3 responde; muestra la hora)
+B sobornar a un policía cercano (1-3 elige la cantidad)
+V primera/tercera persona · Q centrar cámara · RUEDA del ratón/touchpad = distancia de cámara
+R recuperar posición · ESC mapa completo · | (barra vertical) cheats
+Y BOTÓN DE PÁNICO: muestra imagen1.png a pantalla completa y pausa el juego; Y otra vez vuelve.
 
-NOVEDADES DE ESTA VERSIÓN
--------------------------
-Puntería y dirección más fáciles
-- Ayuda de puntería: la mira fija sola al objetivo más cercano (rombo rojo) y la bala se
-  corrige hacia él. Más amplia al apuntar con el clic derecho. Se puede desactivar en el menú.
-- Apuntar con clic derecho (zoom), sensibilidad más baja al apuntar, tiro a la cabeza (más daño).
-- El personaje se orienta hacia donde apuntas y camina de lado; cuerpo a cuerpo con auto-orientación.
-- Coche: volante suave, giro más ágil, derrape con freno de mano, cámara que anticipa las curvas
-  y ayuda de conducción que alinea el coche con la calle al soltar el volante (desactivable).
+IMPORTANTE - imagen1.png
+- Debe estar en la misma carpeta que index.html. Incluí una imagen de ejemplo (una hoja de
+  cálculo falsa): reemplázala por la tuya conservando el nombre imagen1.png.
 
-Damián Quiñones, el protagonista (antes Chispa)
-- Nuevo modelo: tupé, lentes oscuros, chaqueta naranja, cadena dorada, zapatillas; camina, corre,
-  apunta con ambas manos, da puñetazos y cuchilladas.
-- Tiene personalidad: comenta lo que pasa (choques, policía, ceviche, tiros a la cabeza...).
-  Los diálogos tienen subtítulos y voz sintética distinta por personaje.
-- Peatones con aspecto variado (peinados, gorras, lentes).
+HISTORIA (25 misiones)
+Eres Damián Quiñones, peruano, miembro de la banda criminal LA MANADA (jefe: Cristopher).
+Aliados: Fiorella (Club Neón), Vijay Huanaco (Pintura Express), Joseph, Doña Rosa.
+Enemigos: Los Tiburones (líder: Juan José Leyva), el Cap. Einer Alva (policía corrupto) y el
+mafioso extranjero Robert Mussolini.
+- Cap. 1 (1-5): Primer día · Auto de lujo · Cobranza · Ceviche express · Se armó la grande
+- Cap. 2 (6-15): Mensajes sin leer · Sin llamar la atención · Fuego cruzado · Persecución en la
+  avenida · Rescata a Joseph · Dinero sucio · Traición · Asalto al puerto · Cabeza de tiburón ·
+  Rey de la ciudad
+- Cap. 3 (16-25): Un extranjero en TrujiYork · Cobranza en Florencia · Noche de gala (en la
+  discoteca) · Carga delicada · La coima (soborno) · Persecución nocturna · Fuego en El Porvenir ·
+  Paquetes de la discordia · Asalto al Hotel Imperial · Cabeza de la mafia (jefe final)
+- En el menú puedes elegir en qué misión empezar; el juego recuerda la última completada.
+- Algunas misiones ocurren de noche (la hora cambia sola).
 
-Modo historia (5 misiones, luego modo libre)
-1. Primer día: llega al Club Neón.   2. Auto de lujo: roba el superdeportivo y piérdelo de la policía.
-3. Cobranza: noquea a 3 morosos.     4. Ceviche express: entrega el pedido a tiempo sin golpearlo.
-5. Se armó la grande: escapa de la policía (3 estrellas).
-- Dinero, baliza amarilla en el mundo, marcador en el minimapa y distancia al objetivo.
-- Si caes o te arrestan, reintentas la misión.
-- Nuevos lugares: Casa de Doña Chela, Pintura Express (repinta tu coche y pierde a la policía
-  si no hay agentes cerca; cuesta dinero) y la Cevichería (cura tu vida a pie).
+LA CIUDAD: TRUJIYORK
+Ciudad grande (12x12 manzanas), desértica/arenosa, rodeada de cerros y un muro perimetral:
+el mapa tiene fin visible. Hay ciclo de día y noche (1 hora de juego = 1 minuto real);
+de noche brillan neones, ventanas, farolas y las luces de los coches.
+Zonas (en el mapa completo y en la esquina del minimapa):
+ 1. El Golf          Residencial, moderna, exclusiva          VERDE    Relativamente alta
+ 2. California       Acomodada, residencial, conectada        VERDE    Relativamente alta
+ 3. San Andrés       Céntrica, residencial, universitaria     AMARILLO Intermedia
+ 4. Centro Histórico Comercial, histórico, concurrido         AMARILLO Variable
+ 5. El Porvenir      Populoso, comercial, trabajador          NARANJA  Riesgo elevado en sectores
+ 6. Florencia de Mora Popular, urbana, densamente poblada     ROJO     Precaución elevada en sectores
+La seguridad afecta a la policía: en El Golf y California llegan más rápido y más patrullas;
+en El Porvenir y Florencia de Mora tardan más en responder.
+Lugares: Club Neón, Cevichería El Lobo, Pintura Express, Casa de Doña Rosa, Mansión de Cristopher,
+Hotel Imperial, Discoteca Marea, Almacén del Puerto, Mirador, Plaza de Armas, Comisaría,
+Mercado de El Porvenir y la Universidad.
 
-Policía: más estrellas = más dificultad de verdad
-- Estrellas 1-5 aumentan el número de patrullas (2, 3, 5, 7, 9), su velocidad y la frecuencia de refuerzos.
-- 3★ interceptores rápidos · 4★ camiones SWAT blindados y retenes en tu camino · 5★ casi todo SWAT.
-- Los agentes bajan del coche: desde 2★ disparan; a 1★ intentan arrestarte (si te rodean a pie, pierdes).
-- Navegan por las calles, te predicen al perseguirte y pueden pararte con retenes.
-- Para bajar de nivel debes romper su línea de visión y esconderte: cuanto más alto el nivel, más
-  tiempo oculto necesitas. Si te ven continuamente, el nivel sube solo.
-- Cada delito suma "calor": matar peatones, disparar a policías o destruir patrullas sube el nivel.
+MAPA COMPLETO (ESC)
+- Al pulsar ESC se abre el mapa de toda la ciudad con zonas, nivel de seguridad, lugares,
+  tu posición y objetivos. Clic izquierdo = poner waypoint (otro clic cerca = quitarlo),
+  clic derecho = quitar. El waypoint sale en el minimapa y como baliza morada en el mundo.
+  Pasa el ratón por encima para ver el nombre del lugar o la zona. ESC otra vez continúa.
 
-Minimapa (estilo GTA V)
-- Abajo a la izquierda, rota con la cámara, con norte (N), barra de vida y de coche.
-- Muestra locales, objetivos (flecha amarilla en el borde si están lejos), patrullas parpadeando
-  rojo/azul, agentes y la zona de búsqueda en rojo cuando te pierden. El borde parpadea con estrellas.
+DISCOTECA, CEVICHERÍA Y TIENDAS
+- El Club Neón se puede entrar a pie: hombres formales conversando, chicas bailando, barra y zona VIP.
+  Acércate a alguien y pulsa E para hablar. En la barra (E): pisco sour $25 (+15 vida).
+- Cevichería El Lobo: junto al mostrador pulsa E: ceviche $30 (+45 vida). Además, cerca de la
+  cevichería te recuperas poco a poco si no te busca la policía.
+- Pintura Express: entra con el coche para repintarlo y perder a la policía (si no hay agentes cerca).
 
-Estructura de código (js/)
-engine.js motor WebGL · core.js mundo, coches y sonido · char.js personajes y coches (dibujo)
-combat.js puntería y disparo · police.js sistema policial · story.js diálogos y misiones
-hud.js minimapa e interfaz · main.js controles y bucle principal
+POLICÍA: DIÁLOGOS Y SOBORNOS
+- Los policías hablan ("¡Alto, policía!", "Queda detenido...", etc.).
+- Con B cerca de un policía (a pie, o en coche detenido) ofreces $200 / $600 / $1500.
+  Si alcanza, te dejan en paz y se acaba la búsqueda. Cuanto más alta la búsqueda, más cuesta
+  (a 4 estrellas solo el soborno grande tiene opción; a 5 estrellas no aceptan nada).
+  Si es insuficiente, se ofenden: sube 1 estrella y no podrás sobornar de nuevo por 25 s.
+
+CHEATS (tecla |, escribe el nombre y pulsa Enter, o haz clic en el botón)
+ 1. vida        Salud (y coche) al máximo
+ 2. dinero      +$10.000
+ 3. limpio      Quita la búsqueda policial
+ 4. estrellas   Sube 1 estrella de búsqueda
+ 5. auto        Aparece un superdeportivo frente a ti
+ 6. dia         Cambia la hora a las 12:00
+ 7. noche       Cambia la hora a las 23:00
+ 8. inmortal    Invencibilidad (activa/desactiva)
+ 9. supersalto  Super salto (activa/desactiva)
+10. tp          Te teletransporta al waypoint del mapa
+
+OTRAS MEJORAS DE ESTA VERSIÓN
+- Personaje: Damián, conjunto Nike negro con franja blanca, taper fade.
+- Celular con hora, conversaciones y respuestas.
+- Puntería asistida, clic derecho para apuntar, salto, conducción más ágil.
+- Policía: 5 niveles (patrullas, interceptores, SWAT, agentes que disparan, retenes).
+
 
 =====================================================================
-VERSIÓN 3 - CAPÍTULO 2: LA GUERRA DE LOS TIBURONES
+VERSIÓN 5 - CAMBIOS PUNTUALES
 =====================================================================
-Historia
-- Eres Damián Quiñones, peruano, miembro de la banda criminal Los Pulpos (jefe: Don Lucho).
-  Aliados: Mónica (Club Neón), Tuerca (Pintura Express), Lalo, Doña Chela. Enemigos: Los Tiburones
-  (jefe: El Tiburón) y el capitán Salazar, policía corrupto.
-- 15 misiones: Cap. 1 (1-5) el regreso · Cap. 2 (6-15) la guerra:
-  6 Mensajes sin leer · 7 Sin llamar la atención · 8 Fuego cruzado · 9 Persecución en la avenida
-  10 Rescata a Lalo · 11 Dinero sucio · 12 Traición · 13 Asalto al puerto
-  14 Cabeza de tiburón (jefe final) · 15 Rey de la ciudad
-- En el menú puedes elegir en qué misión empezar; el juego recuerda la última que completaste.
+PISTAS "CELESTES" / PARPADEO (z-fighting)
+- Causa: el buffer de profundidad no tenía precisión explícita y las capas (suelo, pista, vereda,
+  rayas y decorados) estaban separadas por solo 1-2 cm; al alejarse se mezclaban y asomaba el color
+  del cielo. Solución: el suelo bajó 20 cm, las rayas y decorados subieron, y el contexto WebGL pide
+  depth:true. También subí el plano cercano de la cámara (0.3 -> 0.45) para ganar precisión.
+- Si aún lo ves en una GPU muy antigua: pon la Calidad en "Media" o "Baja" en el menú.
 
-Celular (tecla T)
-- Mensajes de los personajes llegan durante la historia, con aviso y sonido. Algunos te dejan
-  elegir qué responder (teclas 1-3); ellos contestan según lo que digas. ◀ ▶ cambia de chat.
+CÁMARA (pensada para laptop)
+- V = primera/tercera persona (se puede elegir también en el menú). En primera persona ves tu arma/puños;
+  en coche ves desde el asiento.
+- Ratón/touchpad o FLECHAS para mirar. Q centra la cámara detrás de ti. Rueda: 3 distancias de cámara.
+- Menú: sensibilidad, campo de visión, invertir giro horizontal/vertical, cámara automática.
+- CORREGIDO: el giro horizontal estaba invertido desde el juego original (ratón a la derecha giraba a
+  la izquierda). Ahora es natural; si lo prefieres como antes, marca "Invertir giro horizontal".
+- La cámara en tercera persona ahora se suaviza y esquiva paredes mejor.
 
-Mapa ampliado
-- Ciudad de 8x8 manzanas (antes 5x5): zona industrial nueva y 4 lugares: Mansión de Don Lucho,
-  Discoteca Marea, Almacén del Puerto (contenedores y grúa) y el Mirador. Más tráfico y peatones.
+LIGAR EN EL CLUB (solo personajes adultos, 22-30 años, sin contenido explícito)
+- Acércate a una chica del Club Neón y pulsa E. Hay 10 con nombre propio, edad y personalidad:
+  Valeria, Camila, Fernanda, Shirley, Brenda, Milagros, Luciana, Xiomara, Naomi y Daniela
+  (románticas, divertidas o interesadas: cada tipo reacciona distinto a cumplidos, chistes, bailar y tragos).
+- Elige 1-3 en cada turno; la barra rosa muestra su interés. Con interés alto aparece "Darle un beso"
+  (chapar). El beso termina con fundido a negro, te da vida y ella te escribe al celular (con respuestas).
+- Si el interés cae a 0, te rechaza y no hablará contigo por 90 segundos. Los tragos cuestan $25.
+- Las 10 chicas tienen un modelo ~5 veces más detallado que la gente de la calle (rostro, pestañas,
+  labios, joyas, peinados, vestido en capas, tacones, bolso).
 
-Saltar
-- Espacio (a pie): salto de ~1.6 m; puedes subirte a muros bajos, mesas y techos de coches deportivos.
+CASA CHUSCA (El Golf)
+- Casa de 9 pisos, de colores chillones, balcones torcidos y cúpula dorada. Su letrero dice
+  "DE AHÍ ESCAPARON LAS CHICAS" (cartel visible a distancia). Doña Remedios, la dueña, está en la puerta:
+  pulsa E para escucharla (las chicas del club se escaparon de ahí... y le deben la renta).
+- NOTA: usé "chicas" (mujeres adultas) en vez de "niñas". Si quieres otro texto, cambia la cadena
+  'DE AHÍ ESCAPARON LAS CHICAS' al final de js/world.js (línea con sg('chusca',...)).
+- Otros carteles con texto: Club Neón, Hotel Imperial, Cevichería El Lobo, Pintura Express, Discoteca Marea.
 
-Nuevo aspecto
-- Damián: conjunto Nike negro (chaqueta y pants con franja blanca, logo en el pecho), zapatillas
-  negras de suela blanca y pelo taper fade.
+MÚSICA DEL CLUB
+- Pon tus canciones en la carpeta musica/ con estos nombres: musica_1.mp3, musica_2.mp3, ... hasta musica_15.mp3.
+- Suenan solo cerca del Club Neón: fuerte dentro, más baja afuera, y se apagan al alejarte, pausar o usar Y.
+- Van en orden y se repiten. Si falta un archivo, lo salta; si no hay ninguno, no suena nada (la carpeta viene vacía).
+- Formato MP3. Abre el juego con doble clic o con el servidor local (python3 -m http.server 8000).
 
-Nuevo contenido de juego
-- Enemigos armados (Tiburones, escoltas corruptos, jefe final) que te disparan, aparecen en oleadas
-  y funcionan con la ayuda de puntería y el cuerpo a cuerpo.
-- Coches objetivo que huyen, bolsos de dinero con cronómetro, retenes y huidas con la policía.
-
-Código nuevo: js/gang.js (enemigos) · js/phone.js (celular). story.js ahora tiene las 15 misiones.
+ESTRUCTURA (js/)
+engine.js motor WebGL (día/noche, emisivos) · core.js reglas, zonas, física, sonido
+world.js ciudad, cerros y locales · char.js personajes y coches · combat.js puntería y disparo
+gang.js enemigos de misión · phone.js celular · police.js policía y sobornos
+story.js diálogos y 25 misiones · hud.js minimapa y mapa completo · main.js controles y bucle
+flirt.js ligar en el club · music.js música del club
